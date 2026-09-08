@@ -1,0 +1,83 @@
+version: 2
+
+
+models:
+
+  - name: stg_customers
+
+    description: >
+      Cleaned customer-level dataset containing
+      signup date and experiment assignment.
+
+    columns:
+
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+      - name: experiment_variant
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - control
+                - treatment
+
+
+  - name: stg_acquisition
+
+    description: >
+      Customer acquisition touchpoints containing
+      acquisition channel and platform information.
+
+    columns:
+
+      - name: acquisition_id
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        tests:
+          - not_null
+
+
+  - name: stg_applications
+
+    description: >
+      Product funnel events from recommendation
+      exposure through application completion.
+
+    columns:
+
+      - name: application_id
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+
+  - name: fct_product_funnel
+
+    description: >
+      Analysis-ready customer funnel model joining
+      customer, acquisition and application data.
+
+    columns:
+
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+
+  - name: agg_funnel_performance
+
+    description: >
+      Aggregated experiment and funnel KPIs by
+      variant, acquisition channel and platform.
