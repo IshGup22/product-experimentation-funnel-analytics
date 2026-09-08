@@ -1,0 +1,13 @@
+product_experimentation_funnel_analytics:
+
+  target: dev
+
+  outputs:
+
+    dev:
+
+      type: duckdb
+
+      path: "../data/product_analytics.duckdb"
+
+      threads: 4
