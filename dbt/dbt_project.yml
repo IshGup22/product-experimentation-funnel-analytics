@@ -1,0 +1,32 @@
+name: "product_experimentation_funnel_analytics"
+
+version: "1.0.0"
+
+config-version: 2
+
+profile: "product_experimentation_funnel_analytics"
+
+model-paths:
+  - "models"
+
+seed-paths:
+  - "seeds"
+
+target-path: "target"
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+
+models:
+
+  product_experimentation_funnel_analytics:
+
+    staging:
+      +materialized: view
+      +schema: staging
+
+    marts:
+      +materialized: table
+      +schema: marts
