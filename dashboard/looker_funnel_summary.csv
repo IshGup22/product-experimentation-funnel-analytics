@@ -1,0 +1,11 @@
+experiment_variant,funnel_step,users,conversion_from_signup
+control,Signed Up,9938,1.0
+control,Recommendation Clicked,2547,0.25628899174884284
+control,Activated,5687,0.5722479372107063
+control,Application Started,3234,0.32541758905212315
+control,Application Completed,2042,0.2054739384181928
+treatment,Signed Up,10062,1.0
+treatment,Recommendation Clicked,2935,0.2916915126217452
+treatment,Activated,5993,0.5956072351421189
+treatment,Application Started,3570,0.35480023852116876
+treatment,Application Completed,2306,0.2291790896442059

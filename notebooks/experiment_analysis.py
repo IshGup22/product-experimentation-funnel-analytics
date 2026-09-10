@@ -54,7 +54,7 @@ query = """
 
 SELECT *
 
-FROM marts.fct_product_funnel
+FROM main_marts.fct_product_funnel
 
 """
 
